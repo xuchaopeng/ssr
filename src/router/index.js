@@ -4,7 +4,8 @@ import Index from '@/views/Index';
 import Detail from '@/views/Detail';
 
 Vue.use(Router);
-
+// 导出工厂函数，可以返回router实例
+// 每个请求一个单独实例避免状态相互污染
 export function createRouter() {
   return new Router({
     mode: 'history',

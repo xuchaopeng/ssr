@@ -1,9 +1,16 @@
 <template>
-  <div>Detail</div>
+  <div>
+    Detail
+    <p>{{ $store.state.count }}</p>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  asyncData({ store }) {
+    return store.dispatch('getCount');
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

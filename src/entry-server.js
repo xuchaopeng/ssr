@@ -1,16 +1,21 @@
+// 给服务器提供一个方法，可以根据url设置路由地址，然后返回创建vue实例
 import { createApp } from './main';
 
 export default (context) => {
   return new Promise((resolve, reject) => {
     // 拿出store 和 router实例
     const { app, router, store } = createApp(context);
+
+    // 跳转至首屏
     router.push(context.url);
+
+    // onReady完成时，异步的任务都会结束
     router.onReady(() => {
       // 获取匹配的路由组件数组
       const matchedComponents = router.getMatchedComponents();
 
       // 若无匹配则抛出异常
-      if (matchedComponents.length) {
+      if (!matchedComponents.length) {
         return reject({ code: 404 });
       }
 

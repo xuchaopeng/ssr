@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
+// 工厂函数
 export function createStore() {
   return new Vuex.Store({
     state: { count: 108 },
@@ -18,9 +19,9 @@ export function createStore() {
           setTimeout(() => {
             commit('init', Math.random() * 100);
             resolve();
-          }, 1000);
+          }, 500);
         });
-      },
+      }
     }
   });
 }

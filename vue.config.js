@@ -1,6 +1,7 @@
 // 两个插件分别负责打包客户端和服务端
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
+// 外置化，用于优化打包速度和体积
 const nodeExternals = require('webpack-node-externals');
 const merge = require('lodash.merge');
 // 根据传入环境变量决定入口文件和相应配置项

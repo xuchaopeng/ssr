@@ -1,5 +1,8 @@
 <template>
-  <div>Index</div>
+  <div>
+    Index
+    <p>{{ $store.state.count }}</p>
+  </div>
 </template>
 
 <script>
